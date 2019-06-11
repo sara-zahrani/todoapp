@@ -24,8 +24,12 @@ class TodosController < ApplicationController
       flash[:notice] = "Todo was successfully updated"
       redirect_to todo_path(@todo)
     else
-      render 'new' 
+      render 'new'
     end
+  end
+
+  def index
+    @todos = Todo.all
   end
 
   def show
